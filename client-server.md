@@ -28,3 +28,4 @@ This document explores client-server architecture, a prevalent approach in netwo
 * **Email Systems:** Email clients communicate with email servers to send and receive emails. Servers store, manage, and forward email messages.
 * **File Sharing Applications:** Cloud storage services employ client-server architecture. Clients can upload, download, and manage files stored on central servers.
 * **Database-Driven Applications:** Many applications rely on database servers to store data. Client applications interact with the database server to retrieve, manipulate, and persist data.
+
