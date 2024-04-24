@@ -1,0 +1,20 @@
+{
+  "name": "node_training",
+  "version": "1.0.0",
+  "description": "node training assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./start.js",
+    "start": "node ./start.js"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "sumit negi",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "readline-sync": "^1.4.10"
+  }
+}
