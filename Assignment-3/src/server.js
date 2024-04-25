@@ -1,6 +1,8 @@
-const express = require('express');
-const app = express()
+require("dotenv").config();
+const serverSetup = require("./serverSetup");
 
-app.listen(5000, ()=>{
-    
+const PORT = process.env.PORT || 4001;
+
+serverSetup().listen(PORT, ()=>{
+    console.log(`Server started on PORT: ${PORT}`)
 })
