@@ -1,8 +1,11 @@
-require("dotenv").config();
-const serverSetup = require("./serverSetup");
+const express = require("express");
+const userRouter = require("./router/userRouter");
+const app = express();
 
-const PORT = process.env.PORT || 4001;
+const server = () => {
+    app.use(express.json());
+    app.use("/api",userRouter);
+    return app;
+}
 
-serverSetup().listen(PORT, ()=>{
-    console.log(`Server started on PORT: ${PORT}`)
-})
+module.exports = server;
