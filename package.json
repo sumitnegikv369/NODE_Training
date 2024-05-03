@@ -14,7 +14,14 @@
   "author": "sumit negi",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^20.12.8",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
     "lodash": "^4.17.21",
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "typescript": "^5.4.5"
   }
 }
