@@ -1,5 +1,5 @@
 const express = require("express");
-const userRouter = require("./routes/userRoutes");
+const userRouter = require("./router/userRouter");
 const logger = require("./middlewares/logger");
 const errorHandler = require("./middlewares/ErrorHandler");
 const rateLimter = require("./middlewares/rateLimter");
