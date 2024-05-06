@@ -11,6 +11,7 @@ const server = () => {
     app.use(rateLimter(3));
     app.use(errorHandler);
     app.use("/api",userRouter);
+    app.use("/api",userRouter2);
     return app;
 }
 
