@@ -3,9 +3,9 @@ const validationRule = require('../config/validationRules.js');
 const validateRequest = (req, res, next) => {
     const route = req.originalUrl; 
 
-    if (!validationRule[route]) {
-      return next(); 
-    }
+    // if (!validationRule[route]) {
+    //   return next(); 
+    // }
     
     const { error } = validationRule[route].validate(req.body);
   
