@@ -18,4 +18,4 @@ const validateRequest = (req: Request, res: Response, next: NextFunction) => {
     next(); 
   }
   
-  module.exports = validateRequest;
+  export default validateRequest;

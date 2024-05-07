@@ -1,6 +1,6 @@
-const express = require("express");
-const userRouter = require("./routes/userRoutes");
-const loggerMiddleware = require("./middlewares/logger");
+import express from "express"
+import userRouter from "./router/userRoutes"
+import loggerMiddleware from "./middlewares/logger"
 
 const app = express();
 
@@ -11,4 +11,4 @@ const server = () => {
     return app;
 }
 
-module.exports = server;
+export default server;

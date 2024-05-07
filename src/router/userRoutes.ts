@@ -1,25 +1,17 @@
-import { Request, Response } from "express";
 import { Router } from "express";
-const validateRequest = require("../middlewares/validateRequest");
-const locationValidation = require("../middlewares/locationValidation");
-const queryValidation = require("../middlewares/queryValidaton");
+import validateRequest from "../middlewares/validateRequest"
+import locationValidation from "../middlewares/locationValidation"
+import queryValidation from "../middlewares/queryValidaton"
+import user from "../controllers/user.controller"
 const router = Router();
 
-router.post("/", async (req: Request, res: Response) => {
-    res.send("Hello, world!");
-});
+router.post("/", user.home);
 
-router.post("/validate", validateRequest, (req: Request, res: Response) => {
-    res.json({message: "user validated!"})
-});
+router.post("/validate", validateRequest, user.validate);
 
-router.get("/profile", locationValidation, (req: Request, res: Response) => {
-    res.json({message: "user profile access"})
-});
+router.get("/profile", locationValidation, user.profile);
 
-router.post("/post/:id", queryValidation, (req: Request, res: Response) => {
-    res.json({message: `user ${req.params.id} validated`})
-});
+router.post("/post/:id", queryValidation, user.post);
 
-module.exports = router;
+export default router;
 

@@ -10,4 +10,4 @@ const queryValidation = (req: Request, res: Response, next: NextFunction) => {
     }
     next();
 }
-module.exports = queryValidation
+export default queryValidation
