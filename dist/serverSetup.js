@@ -1,6 +1,6 @@
 "use strict";
 const express = require("express");
-const userRouter = require("./routes/userRoutes");
+const userRouter = require("./router/userRoutes");
 const loggerMiddleware = require("./middlewares/logger");
 const app = express();
 const server = () => {
