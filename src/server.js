@@ -1,6 +1,7 @@
 const express = require("express");
 const userRouter = require("./router/userRouter");
 const userRouter2 = require("./router/userRouter2");
+const authRouter = require("./router/authRouter");
 const logger = require("./middlewares/logger");
 const errorHandler = require("./middlewares/ErrorHandler");
 const rateLimter = require("./middlewares/rateLimter");
@@ -13,6 +14,7 @@ const server = () => {
     app.use(errorHandler);
     app.use("/api",userRouter);
     app.use("/api",userRouter2);
+    app.use("/api",authRouter);
     return app;
 }
 
