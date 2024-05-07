@@ -1,4 +1,4 @@
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
@@ -21,9 +21,7 @@ const register = async (req, res) => {
         const newUser = new User({ username, email, password: hashedPassword });
         await newUser.save();
     
-        const token = jwt.sign({ userId: newUser._id }, "secret", {
-          expiresIn: '30m' 
-        });
+        const token = jwt.sign({ userId: newUser._id }, "secret");
     
         res.status(201).json({ token });
       } catch (error) {
@@ -50,9 +48,7 @@ const login = async (req, res) => {
             return res.status(401).json({ message: 'Invalid credentials' });
         }
         
-        const token = jwt.sign({ userId: user._id }, "secret", {
-            expiresIn: '30m'
-        });
+        const token = jwt.sign({ userId: user._id });
         
         console.log("here");
         res.json({ token });
@@ -63,10 +59,15 @@ const login = async (req, res) => {
 }
 
 const page = (req, res) => {
-    read.json({message: "page data"})
+    res.json({message: "page data"})
+}
+
+const dashboard = (req, res) => {
+    res.json({message: "dashbard content"})
 }
 module.exports = {
     register,
     login,
-    page
+    page,
+    dashboard
 };
