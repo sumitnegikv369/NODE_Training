@@ -9,4 +9,4 @@ const queryValidation = (req, res, next) => {
     }
     next();
 };
-module.exports = queryValidation;
+exports.default = queryValidation;
