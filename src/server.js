@@ -5,16 +5,18 @@ const authRouter = require("./router/authRouter");
 const logger = require("./middlewares/logger");
 const errorHandler = require("./middlewares/ErrorHandler");
 const rateLimter = require("./middlewares/rateLimter");
+const security = require("./middlewares/security");
 const app = express();
 
 const server = () => {
     app.use(express.json());
     app.use(logger);
     app.use(rateLimter(3));
-    app.use(errorHandler);
+    app.use(security.middleware());
     app.use("/api",userRouter);
     app.use("/api",userRouter2);
     app.use("/api",authRouter);
+    app.use(errorHandler);
     return app;
 }
 
