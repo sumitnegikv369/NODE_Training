@@ -47,3 +47,52 @@ let message = "This is a message";  // type is inferred as string
 
 let count = 10;  // type is inferred as number
 ```
+
+## **Classes and Interfaces**
+
+### **Classes**
+
+Classes in TypeScript allow you to create blueprints for objects with properties and methods. Here's an example of a simple class:
+
+```typescript
+class Person {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(`Hello, my name is ${this.name} and I'm ${this.age} years old.`);
+  }
+}
+
+let person1 = new Person("Alice", 35);
+person1.greet();
+```
+
+## interface
+- Interfaces in TypeScript define contracts for objects, specifying the properties and methods they must have. Here's an example of an interface:
+```typescript
+interface Shape {
+  color: string;
+  area(): number;
+}
+
+class Circle implements Shape {
+  radius: number;
+
+  constructor(radius: number) {
+    this.radius = radius;
+  }
+
+  area() {
+    return Math.PI * this.radius ** 2;
+  }
+}
+
+let myCircle = new Circle(5);
+console.log(myCircle.area());
+```

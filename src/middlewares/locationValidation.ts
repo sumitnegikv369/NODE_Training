@@ -16,5 +16,5 @@ const locationValidation = (req: Request, res: Response, next: NextFunction) => 
     next();
 }
 
-module.exports = locationValidation
+export default locationValidation
 

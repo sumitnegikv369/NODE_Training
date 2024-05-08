@@ -7,5 +7,5 @@ const logger = (req: Request, res: Response, next: NextFunction) => {
     console.log(`method: ${method} \nURL: ${URL} \ntimestamp: ${timestamp}`);
     next();
 }
-module.exports = logger;
+export default logger;
 
