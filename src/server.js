@@ -11,6 +11,7 @@ const server = () => {
     app.use(express.json());
     app.use(logger);
     app.use(rateLimter(3));
+    app.use("/auth",authRouter);
     app.use("/api1",userRouter);
     app.use(errorHandler);
     return app;

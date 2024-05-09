@@ -13,7 +13,6 @@ const rateLimter = (limit) => {
         requests.delete("ip");
        }, 5000);
 
-       console.log(requests);
     }
 }
 module.exports = rateLimter
