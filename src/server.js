@@ -10,9 +10,8 @@ const server = () => {
     app.use(express.json());
     app.use(logger);
     app.use(rateLimter(3));
+    app.use("/api1",userRouter);
     app.use(errorHandler);
-    app.use("/api",userRouter);
-    app.use("/api",userRouter2);
     return app;
 }
 
