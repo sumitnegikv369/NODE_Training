@@ -1,4 +1,4 @@
-const Joi = require("joi");
+import Joi from "joi"
 
 const validationRule = {
   "/api/validate": Joi.object({
@@ -11,5 +11,4 @@ const validationRule = {
 
   })
 }
-
-module.exports = validationRule;
+export default validationRule;
