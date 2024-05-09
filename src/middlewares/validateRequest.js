@@ -1,8 +1,6 @@
-import { NextFunction, Request, Response } from "express";
-
 const validationRule = require('../config/validationRules.js');
 
-const validateRequest = (req: Request, res: Response, next: NextFunction) => {
+const validateRequest = (req, res, next) => {
     const route = req.originalUrl; 
 
     // if (!validationRule[route]) {
@@ -18,4 +16,4 @@ const validateRequest = (req: Request, res: Response, next: NextFunction) => {
     next(); 
   }
   
-  export default validateRequest;
+  module.exports = validateRequest;
