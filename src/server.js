@@ -11,8 +11,8 @@ const server = () => {
     app.use(logger);
     app.use(rateLimter(3));
     app.use(errorHandler);
-    app.use("/api",userRouter);
-    app.use("/api",userRouter2);
+    app.use("/api1",userRouter);
+    app.use("/api2",userRouter2);
     return app;
 }
 
