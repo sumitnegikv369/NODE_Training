@@ -3,7 +3,7 @@ const validateRequest = require("../middlewares/validateRequest");
 const { user } = require("../controllers/UserController");
 const router = express.Router();
 
-router.post('/user', validateRequest,user);
+router.post('/', validateRequest,user);
 
 
 module.exports = router;
