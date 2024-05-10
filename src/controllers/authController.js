@@ -6,10 +6,6 @@ const register = async (req, res) => {
     try {
         const { username, email, password } = req.body;
     
-        if (!username || !email || !password) {
-          return res.status(400).json({ message: 'Please provide all fields' });
-        }
-    
         const existingUser = await User.findOne({ email: email });
         if (existingUser) {
           return res.status(400).json({ message: 'Email already exists' });
@@ -33,10 +29,6 @@ const register = async (req, res) => {
 const login = async (req, res) => {
     try {
         const { email, password } = req.body;
-        
-        if (!email || !password) {
-            return res.status(400).json({ message: 'Please provide all fields' });
-        }
         
         const user = await User.findOne({ email: email });
         if (!user) {
