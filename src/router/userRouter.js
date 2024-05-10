@@ -1,9 +1,13 @@
 const express = require("express");
-const validateRequest = require("../middlewares/validateRequest");
-const { user } = require("../controllers/UserController");
+const {register, adminRegister, page, login, dashboard} = require("../controllers/authController");
+const verifyToken = require("../middlewares/jwtAuth");
+const authorize = require("../middlewares/authorize");
 const router = express.Router();
 
-router.post('/', validateRequest,user);
-
+router.post("/signup", register);
+router.post("/admin/signup", adminRegister);
+router.post("/signin", login);
+router.get("/page1", verifyToken, authorize, page);
+router.get("/dashboard", verifyToken, authorize, dashboard); // specific to admin
 
 module.exports = router;
