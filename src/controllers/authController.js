@@ -21,7 +21,6 @@ const register = async (req, res) => {
     
         res.status(201).json({ token });
       } catch (error) {
-        console.error(error);
         res.status(500).json({ message: 'Server Error' });
       }
 }
@@ -42,10 +41,8 @@ const login = async (req, res) => {
         
         const token = jwt.sign({ userId: user._id });
         
-        console.log("here");
         res.json({ token });
       } catch (error) {
-        console.error(error);
         res.status(500).json({ message: 'Server'});
       }
 }

@@ -16,4 +16,3 @@ const locationValidation = (req, res, next) => {
 }
 
 module.exports = locationValidation
-
