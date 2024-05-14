@@ -1,5 +1,5 @@
 const express = require("express");
-const userRouter = require("./router/userRouter");
+const authRouter = require("./router/authRouter");
 const logger = require("./middlewares/logger");
 const errorHandler = require("./middlewares/ErrorHandler");
 const rateLimter = require("./middlewares/rateLimter");
@@ -11,7 +11,7 @@ const server = () => {
   app.use(helmet());
   app.use(logger);
   app.use(rateLimter(3));
-  app.use("/user", userRouter);
+  app.use("/user", authRouter);
   app.use(errorHandler);
   return app;
 };
