@@ -3,13 +3,15 @@ require("dotenv").config({
 });
 const serverSetup = require("./server");
 const connectDB = require("./config/db");
-const seedCountry = require("./country");
+const seedCountry = require("./utils/country");
+const seedAdmin = require("./utils/seedAdmin")
 const Country = require("./models/country");
 
 const PORT = process.env.PORT || 4001;
 
 connectDB().then(()=>{
     seedDB();
+    seedAdmin();
     serverSetup().listen(PORT, ()=>{
         console.log(`Server started on PORT: ${PORT}`)
     })
